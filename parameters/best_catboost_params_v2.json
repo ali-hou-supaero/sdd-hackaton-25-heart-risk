@@ -1,0 +1,20 @@
+{
+  "depth": 7,
+  "learning_rate": 0.1283304976830485,
+  "iterations": 1823,
+  "l2_leaf_reg": 16.76722489515425,
+  "bagging_temperature": 0.15779207939492257,
+  "subsample": 0.5533819675420546,
+  "rsm": 0.949286187100711,
+  "border_count": 246,
+  "sampling_frequency": "PerTreeLevel",
+  "one_hot_max_size": 5,
+  "class_weights": [
+    1,
+    20
+  ],
+  "loss_function": "Logloss",
+  "eval_metric": "F1",
+  "verbose": false,
+  "random_state": 42
+}
