@@ -1,26 +1,26 @@
-# SDD Mini-Hackathon 2025 — Heart-Risk Classification
+# Mini-hackathon SDD 2025 — Classification du risque cardiaque
 
-Team experiments for the SUPAERO SDD mini-hackathon, exploring a binary heart-risk prediction task on tabular data.
+Expériences d’équipe pour le mini-hackathon SDD de SUPAERO, consacrées à une tâche de prédiction binaire du risque cardiaque sur des données tabulaires.
 
-## What is included
+## Contenu des expériences
 
-The notebooks explore class imbalance, preprocessing and several classifiers, including Random Forest, XGBoost and CatBoost. Ali's notebooks include missing-value handling, resampling experiments, Optuna hyperparameter search and decision-threshold tuning.
+Les notebooks explorent le déséquilibre des classes, le prétraitement et plusieurs classifieurs, dont Random Forest, XGBoost et CatBoost. Les notebooks d’Ali incluent le traitement des valeurs manquantes, des expériences de rééchantillonnage, la recherche d’hyperparamètres avec Optuna et l’ajustement du seuil de décision.
 
-Start with [ali.ipynb](ali.ipynb) for the earlier exploration and [ali_V2.ipynb](ali_V2.ipynb) for the CatBoost/Optuna extension. The latter combines training and extra data, creates a stratified validation split, tunes CatBoost with an F1 objective and exports predictions. These are experimental notebooks; saved scores should not be treated as an unbiased final test benchmark.
+Commencer par [ali.ipynb](ali.ipynb) pour l’exploration initiale et [ali_V2.ipynb](ali_V2.ipynb) pour l’extension CatBoost/Optuna. Cette dernière combine les données d’entraînement et les données supplémentaires, crée une séparation stratifiée de validation, optimise CatBoost selon le F1 et exporte les prédictions. Ces notebooks sont expérimentaux ; les scores enregistrés ne constituent pas une évaluation finale non biaisée sur un jeu de test.
 
-## Repository map
+## Organisation du dépôt
 
-- `ali.ipynb`, `ali_V2.ipynb` — Ali's experiment notebooks.
-- `alexandre.ipynb`, `francois.ipynb` — additional team notebook files; completeness varies.
-- `data/` — train, test, extra data and a sample submission.
-- `models/` — serialized model versions.
-- `parameters/` — saved CatBoost configurations.
-- `submissions/` — prediction CSVs from different experiments.
-- `catboost_info/` — generated training logs.
+- `ali.ipynb`, `ali_V2.ipynb` — notebooks d’expériences d’Ali.
+- `alexandre.ipynb`, `francois.ipynb` — autres fichiers notebooks de l’équipe, dont le degré d’avancement varie.
+- `data/` — données d’entraînement, de test, supplémentaires et exemple de soumission.
+- `models/` — versions des modèles sérialisés.
+- `parameters/` — configurations CatBoost enregistrées.
+- `submissions/` — fichiers CSV de prédictions issus des expériences.
+- `catboost_info/` — journaux d’entraînement générés.
 
-## Running the experiments
+## Exécution des expériences
 
-Install Git LFS before cloning. On Debian/Ubuntu:
+Installer Git LFS avant de cloner. Sous Debian/Ubuntu :
 
 ```bash
 sudo apt install git-lfs
@@ -30,14 +30,14 @@ cd sdd-hackaton-25-heart-risk
 git lfs pull
 ```
 
-On other systems, install Git LFS with the appropriate installer and initialize it with `git lfs install`.
+Sur les autres systèmes, installer Git LFS avec l’installateur adapté et l’initialiser avec `git lfs install`.
 
-Use Jupyter with Python, pandas, NumPy, matplotlib, seaborn, SciPy, scikit-learn, imbalanced-learn, XGBoost, CatBoost, Optuna and joblib. Ali's second notebook also imports Optuna's CatBoost integration. No version-pinned environment is provided.
+Utiliser Jupyter avec Python, pandas, NumPy, matplotlib, seaborn, SciPy, scikit-learn, imbalanced-learn, XGBoost, CatBoost, Optuna et joblib. Le second notebook d’Ali importe également l’intégration CatBoost d’Optuna. Aucun environnement aux versions verrouillées n’est fourni.
 
-Run notebooks from the repository root so paths such as `data/train.csv` resolve correctly. Review training and export cells before execution: they can take substantial time and overwrite model, parameter and submission files. In particular, `ali_V2.ipynb` configures a 300-trial study. Only load trusted serialized models.
+Exécuter les notebooks depuis la racine du dépôt pour résoudre correctement les chemins comme `data/train.csv`. Vérifier les cellules d’entraînement et d’export avant exécution : elles peuvent prendre beaucoup de temps et écraser des modèles, des paramètres ou des soumissions. En particulier, `ali_V2.ipynb` configure une étude de 300 essais. Charger uniquement des modèles sérialisés de confiance.
 
-## Scope and attribution
+## Périmètre et attribution
 
-This is a collaborative academic hackathon project. Notebook names help locate individual work but do not establish exclusive ownership of the overall pipeline. This README does not claim a leaderboard ranking or independently verified score.
+Il s’agit d’un projet collectif de hackathon académique. Les noms des notebooks facilitent le repérage du travail individuel, sans établir une attribution exclusive de l’ensemble du pipeline. Ce README ne revendique ni classement dans la compétition ni score vérifié indépendamment.
 
-The models are educational experiments, not a clinically validated diagnostic system. Data usage and redistribution terms must be checked with the original hackathon source before reuse.
+Les modèles sont des expériences pédagogiques, pas un système de diagnostic cliniquement validé. Les conditions d’utilisation et de redistribution des données doivent être vérifiées auprès de la source originale du hackathon avant réutilisation.
